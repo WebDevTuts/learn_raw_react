@@ -73,6 +73,14 @@
       },
     });
 
+  /*
+   * Render
+   */
+
+  var contactItemElements = contacts
+    .filter(function(contact) { return contact.email })
+    .map(function(contact) { return React.createElement(ContactItem, contact) });
+
 
   </script>
 </body>
