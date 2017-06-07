@@ -14,27 +14,23 @@
 
   <script>
 
-    var contacts = [
-      {key: 1, name: "James Nelson", email: "james@jamesknelson.com"},
-      {key: 2, name: "Bob"}
-    ];
+    var ContactItem = React.createClass({
+      propTypes: {
+        name: React.PropTypes.string.isRequired
+      },
 
-    var listElements = contacts
-      .filter(function(contact) { return contact.email; })
-      .map(function(contact) {
-        return React.createElement('li', {key: contact.key},
-          React.createElement('h2', {}, contact.name),
-          React.createElement('a', {href: 'mailto:'+contact.email}, contact.email)
+      render: function() {
+        return (
+          React.createElement('li', {className: 'Contact'},
+            React.createElement('h2', {className: 'Contact-name'}, this.props.name)
+          )
         );
-      });
+      }
+    });
 
-    var rootElement =
-      React.createElement('div', {},
-        React.createElement('h1', {}, "Contacts"),
-        React.createElement('ul', {}, listElements)
-      );
+    var element = React.createElement(ContactItem, {name: "James K Nelson"})
 
-    ReactDOM.render(rootElement, document.getElementById('react-app'));
+    ReactDOM.render(element, document.getElementById('react-app'));
   </script>
 </body>
 </html>
