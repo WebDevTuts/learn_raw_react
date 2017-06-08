@@ -39,7 +39,7 @@
         return (
           React.createElement('li', {className: 'ContactItem'},
             React.createElement('h2', {className: 'ContactItem-name'}, this.props.name),
-            React.createElement('a', {className: 'ContactItem-email' href: 'mailto:'+this.props.email}, this.props.email),
+            React.createElement('a', {className: 'ContactItem-email', href: 'mailto:'+this.props.email}, this.props.email),
             React.createElement('div', {className: 'ContactItem-description'}, this.props.description)
           )
         );
@@ -53,7 +53,7 @@
 
       render: function() {
         return (
-          React.createElement('form', {},
+          React.createElement('form', {className: 'ContactForm'},
             React.createElement('input', {
               type: 'text',
               placeholder: 'Name (required)',
