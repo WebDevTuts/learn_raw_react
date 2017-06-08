@@ -98,9 +98,13 @@
     /*
     * Render
     */
-
-
-    ReactDOM.render(rootElement, document.getElementById('react-app'));
+    ReactDOM.render(
+      React.createElement(ContactView, {
+        contacts: contacts,
+        newContact: newContact,
+      }),
+      document.getElementById('react-app')
+    );
   </script>
 </body>
 </html>
