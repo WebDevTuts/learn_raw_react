@@ -119,6 +119,7 @@
       propTypes: {
         contacts: React.PropTypes.array.isRequired,
         newContact: React.PropTypes.object.isRequired,
+        onNewContactChange: React.PropTypes.func.isRequired,
       },
 
       render: function() {
@@ -132,7 +133,7 @@
             React.createElement('ul', {className: 'ContactView-list'}, contactItemElements),
             React.createElement(ContactForm, {
               contact: this.props.newContact,
-              onChange: function(contact) { console.log(contact); },
+              onChange: this.props.onNewContactChange,
             })
           )
         );
