@@ -53,3 +53,7 @@ body {
   border: 1px solid #888;
   font-size: 14px;
 }
+
+.ContactForm > input.ContactForm-error {
+  border-color: #B30E2F;
+}
