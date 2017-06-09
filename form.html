@@ -148,7 +148,10 @@
       Object.assign(state, changes);
 
       ReactDOM.render(
-        React.createElement(ContactView, Object.assign({}, state, { onNewContactChange: updateNewContact, })),
+        React.createElement(ContactView, Object.assign({}, state, {
+          onNewContactChange: updateNewContact,
+          onNewContactSubmit: submitNewContact,
+        })),
         document.getElementById('react-app')
       );
     }
