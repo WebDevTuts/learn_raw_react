@@ -39,6 +39,7 @@
       propTypes: {
         contact: React.PropTypes.object.isRequired,
         onChange: React.PropTypes.func.isRequired,
+        onSubmit: React.PropTypes.func.isRequired,
       },
 
       onNameChange: function(e) {
@@ -53,9 +54,14 @@
         this.props.onChange(Object.assign({}, this.props.value, {description: e.target.value}));
       },
 
+      onSubmit: function(e) {
+        e.preventDefault();
+        this.props.onSubmit();
+      },
+
       render: function() {
         return (
-          React.createElement('form', {className: 'ContactForm'},
+          React.createElement('form', {onSubmit: this.onSubmit, noValidate: true, className: 'ContactForm'},
             React.createElement('input', {
               type: 'text',
               placeholder: 'Name (required)',
